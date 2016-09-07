@@ -26,9 +26,16 @@ import sapotero.esd.Decorator.DocumentItemDecoration;
 import sapotero.esd.Model.Document;
 import sapotero.esd.R;
 
-public class MainActivity extends AppCompatActivity {
+public class DocumenListActivity extends AppCompatActivity {
 
-  private static final String TAG = "RecyclerViewExample";
+  private static final String TAG = "DocumentView";
+
+  public final static String ID = "DOCUMENT_ID";
+  public final static String TITLE = "DOCUMENT_TITLE";
+  public final static String DESCRIPTION = "DOCUMENT_DESCRIPTION";
+  public final static String AUTHOR = "DOCUMENT_AUTHOR";
+  public final static String IMAGE = "DOCUMENT_IMAGE";
+
   private List<Document> feedsList;
   private RecyclerView mRecyclerView;
   private DocumentAdapter adapter;
@@ -93,10 +100,10 @@ public class MainActivity extends AppCompatActivity {
       progressBar.setVisibility(View.GONE);
 
       if (result == 1) {
-        adapter = new DocumentAdapter(MainActivity.this, feedsList);
+        adapter = new DocumentAdapter(DocumenListActivity.this, feedsList);
         mRecyclerView.setAdapter(adapter);
       } else {
-        Toast.makeText(MainActivity.this, "Failed to fetch data!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(DocumenListActivity.this, "Failed to fetch data!", Toast.LENGTH_SHORT).show();
       }
     }
   }
@@ -110,7 +117,10 @@ public class MainActivity extends AppCompatActivity {
       for (int i = 0; i < posts.length(); i++) {
         JSONObject post = posts.optJSONObject(i);
         Document item = new Document();
+        item.setId( post.optString("id") );
         item.setTitle(post.optString("title"));
+        item.setDescription(post.optString("description"));
+        item.setAuthor(post.optString("author"));
         item.setImage(post.optString("image"));
 
         feedsList.add(item);

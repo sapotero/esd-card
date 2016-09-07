@@ -1,6 +1,7 @@
 package sapotero.esd.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.text.Html;
 import android.view.LayoutInflater;
@@ -12,6 +13,8 @@ import com.squareup.picasso.NetworkPolicy;
 import com.squareup.picasso.Picasso;
 import java.util.List;
 
+import sapotero.esd.Activity.DocumenListActivity;
+import sapotero.esd.Activity.DocumentViewActivity;
 import sapotero.esd.Model.Document;
 import sapotero.esd.R;
 import sapotero.esd.View.DocumentViewHolder;
@@ -62,6 +65,14 @@ public class DocumentAdapter extends RecyclerView.Adapter<DocumentViewHolder> {
 
       Document document = documentList.get(position);
       Toast.makeText(mContext, document.getTitle(), Toast.LENGTH_SHORT).show();
+
+      Intent intent = new Intent(mContext, DocumentViewActivity.class);
+      intent.putExtra(DocumenListActivity.ID, document.getId());
+      intent.putExtra(DocumenListActivity.TITLE, document.getTitle());
+      intent.putExtra(DocumenListActivity.DESCRIPTION, document.getDescription());
+      intent.putExtra(DocumenListActivity.AUTHOR, document.getAuthor());
+      intent.putExtra(DocumenListActivity.IMAGE, document.getImage());
+      mContext.startActivity(intent);
     }
   };
 

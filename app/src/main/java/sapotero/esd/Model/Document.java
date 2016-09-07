@@ -3,7 +3,7 @@ package sapotero.esd.Model;
 
 public class Document {
 
-  private int id;
+  private String id;
   private String author;
   private String title;
   private String description;
@@ -12,11 +12,11 @@ public class Document {
   private String updatedAt;
   private String url;
 
-  public int getId() {
+  public String getId() {
     return id;
   }
 
-  public void setId(int id) {
+  public void setId(String id) {
     this.id = id;
   }
 
