@@ -44,7 +44,6 @@ public class DocumentAdapter extends RecyclerView.Adapter<DocumentViewHolder> {
     Picasso.with(mContext).load(document.getImage())
         .error(R.drawable.placeholder)
         .placeholder(R.drawable.placeholder)
-        .networkPolicy(NetworkPolicy.NO_CACHE)
         .into(documentViewHolder.imageView);
 
     //Setting text view title

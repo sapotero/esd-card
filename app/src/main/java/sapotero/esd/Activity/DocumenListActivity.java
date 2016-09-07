@@ -1,5 +1,6 @@
 package sapotero.esd.Activity;
 
+import android.content.res.AssetManager;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
@@ -16,6 +17,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -62,6 +65,25 @@ public class DocumenListActivity extends AppCompatActivity {
     new AsyncHttpTask().execute(url);
 
     setTitle( "Документы" );
+
+    String tContents = "";
+    try {
+      InputStream stream = getAssets().open("test.pdf");
+
+      int size = stream.available();
+      byte[] buffer = new byte[size];
+      stream.read(buffer);
+      stream.close();
+      tContents = new String(buffer);
+    } catch (IOException e) {
+//      Log.d(e);
+    }
+
+//    getAssets().openFd("test.pdf").getParcelFileDescriptor();
+
+    Log.d( "FILE", tContents.substring(0, 100) );
+
+
   }
 
   public class AsyncHttpTask extends AsyncTask<String, Void, Integer> {

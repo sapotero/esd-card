@@ -11,91 +11,64 @@
     tools:context="sapotero.esd.Activity.DocumentViewActivity">
 
 
-    <TableLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:id="@+id/image"
+        android:adjustViewBounds="false"
+        android:background="#efe6e6"
+        android:layout_marginTop="18dp"
+        android:layout_below="@+id/title"
+        android:layout_alignParentStart="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/title"
         android:layout_alignParentTop="true"
-        android:stretchColumns="*"
-        android:layout_alignParentStart="true">
+        android:layout_alignStart="@+id/image"
+        android:layout_marginTop="21dp"
+        android:layout_toStartOf="@+id/id"/>
 
-        <TableRow android:padding="2dp">
-            <TextView android:layout_width="fill_parent"
-                      android:layout_height="wrap_content"
-                      android:text="id"
-                      android:gravity="left|center_horizontal"
-                      android:textAppearance="?android:attr/textAppearanceLarge"
-                />
-            <TextView android:layout_width="fill_parent"
-                      android:layout_height="wrap_content"
-                      android:text=""
-                      android:gravity="left|center_horizontal"
-                      android:textAppearance="?android:attr/textAppearanceLarge"
-                      android:id="@+id/id"
-                      android:layout_span="2"/>
-        </TableRow>
-        <TableRow android:padding="2dp">
-            <TextView android:layout_width="fill_parent"
-                      android:layout_height="wrap_content"
-                      android:text="author"
-                      android:gravity="left|center_horizontal"
-                      android:textAppearance="?android:attr/textAppearanceLarge"
-                />
-            <TextView android:layout_width="fill_parent"
-                      android:layout_height="wrap_content"
-                      android:text=""
-                      android:gravity="left|center_horizontal"
-                      android:textAppearance="?android:attr/textAppearanceLarge"
-                      android:id="@+id/author"
-                      android:layout_span="2"/>
-        </TableRow>
-        <TableRow android:padding="2dp">
-            <TextView android:layout_width="fill_parent"
-                      android:layout_height="wrap_content"
-                      android:text="title"
-                      android:gravity="left|center_horizontal"
-                      android:textAppearance="?android:attr/textAppearanceLarge"
-                />
-            <TextView android:layout_width="fill_parent"
-                      android:layout_height="wrap_content"
-                      android:text=""
-                      android:gravity="left|center_horizontal"
-                      android:textAppearance="?android:attr/textAppearanceLarge"
-                      android:id="@+id/title"
-                      android:layout_span="2"/>
-        </TableRow>
-        <TableRow android:padding="2dp">
-            <TextView android:layout_width="fill_parent"
-                      android:layout_height="wrap_content"
-                      android:text="description"
-                      android:gravity="left|center_horizontal"
-                      android:textAppearance="?android:attr/textAppearanceLarge"
-                />
-            <TextView android:layout_width="fill_parent"
-                      android:layout_height="wrap_content"
-                      android:text=""
-                      android:gravity="left|center_horizontal"
-                      android:textAppearance="?android:attr/textAppearanceLarge"
-                      android:id="@+id/description"
-                      android:layout_span="2"/>
-        </TableRow>
-        <TableRow android:padding="2dp">
-            <TextView android:layout_width="fill_parent"
-                      android:layout_height="wrap_content"
-                      android:text="image"
-                      android:gravity="left|center_horizontal"
-                      android:textAppearance="?android:attr/textAppearanceLarge"
-                />
-            <TextView android:layout_width="fill_parent"
-                      android:layout_height="wrap_content"
-                      android:text=""
-                      android:gravity="left|center_horizontal"
-                      android:textAppearance="?android:attr/textAppearanceLarge"
-                      android:id="@+id/image"
-                      android:layout_span="2"/>
-        </TableRow>
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:text="description"
+        android:id="@+id/description"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="25dp"
+        android:layout_alignTop="@+id/image"
+        android:layout_toEndOf="@+id/image"
+        android:layout_above="@+id/author"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="author"
+        android:id="@+id/author"
+        android:textStyle="bold|italic"
+        android:layout_alignBottom="@+id/image"
+        android:layout_alignStart="@+id/description"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="id"
+        android:id="@+id/id"
+        android:layout_alignTop="@+id/title"
+        android:layout_alignEnd="@+id/description"
+        android:textStyle="italic"
+        android:textColor="#362f2f2f"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="show pdf"
+        android:id="@+id/pdf"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="showPdf"/>
 
-    </TableLayout>
 </RelativeLayout>

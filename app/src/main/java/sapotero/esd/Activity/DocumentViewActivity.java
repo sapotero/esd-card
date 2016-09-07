@@ -6,8 +6,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.NetworkPolicy;
+import com.squareup.picasso.Picasso;
 
 import sapotero.esd.R;
 
@@ -40,8 +45,11 @@ public class DocumentViewActivity extends AppCompatActivity {
     TextView mAuthor = (TextView) findViewById(R.id.author);
     mAuthor.setText( author );
 
-    TextView mImage = (TextView) findViewById(R.id.image);
-    mImage.setText( image );
+    ImageView mImage = (ImageView) findViewById(R.id.image);
+    Picasso.with(this).load( image )
+        .error(R.drawable.placeholder)
+        .placeholder(R.drawable.placeholder)
+        .into(mImage);
 
     setTitle( title );
 
@@ -64,5 +72,10 @@ public class DocumentViewActivity extends AppCompatActivity {
         return true;
     }
     return super.onOptionsItemSelected(item);
+  }
+
+  public void showPdf(View view) {
+    Intent intent = new Intent(this, PdfViewActivity.class);
+    this.startActivity(intent);
   }
 }

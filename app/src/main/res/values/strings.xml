@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">ESD</string>
+
+    <string name="previous">Предыдущая</string>
+    <string name="next">Следующая</string>
+    <string name="view">Показать</string>
+
+    <string name="app_name_with_index">PDF (%1$d/%2$d)</string>
+    <string name="info">Информация</string>
+    <string name="intro_message">intro_message</string>
 </resources>
