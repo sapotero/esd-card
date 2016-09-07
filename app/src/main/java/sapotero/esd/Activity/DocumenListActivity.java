@@ -1,5 +1,6 @@
 package sapotero.esd.Activity;
 
+import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -40,6 +41,7 @@ public class DocumenListActivity extends AppCompatActivity {
   private RecyclerView mRecyclerView;
   private DocumentAdapter adapter;
   private ProgressBar progressBar;
+  private SQLiteDatabase db;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -55,8 +57,10 @@ public class DocumenListActivity extends AppCompatActivity {
     progressBar.setVisibility(View.VISIBLE);
 
     // Downloading data from below url
-    final String url = "http://192.168.155.23:9000/documents.json";
+    final String url = "https://esd-documents.herokuapp.com/documents.json";
     new AsyncHttpTask().execute(url);
+
+    setTitle( "Документы" );
   }
 
   public class AsyncHttpTask extends AsyncTask<String, Void, Integer> {
