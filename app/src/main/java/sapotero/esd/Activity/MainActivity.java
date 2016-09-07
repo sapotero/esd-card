@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import sapotero.esd.Adapter.DocumentAdapter;
+import sapotero.esd.Decorator.DocumentItemDecoration;
 import sapotero.esd.Model.Document;
 import sapotero.esd.R;
 
@@ -40,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
     // Initialize recycler view
     mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+    mRecyclerView .addItemDecoration(new DocumentItemDecoration(this));
     mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
     progressBar = (ProgressBar) findViewById(R.id.progress_bar);
