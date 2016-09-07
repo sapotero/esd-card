@@ -26,6 +26,7 @@ import sapotero.esd.Adapter.DocumentAdapter;
 import sapotero.esd.Decorator.DocumentItemDecoration;
 import sapotero.esd.Model.Document;
 import sapotero.esd.R;
+import sapotero.esd.SQLite.SQLiteHelper;
 
 public class DocumenListActivity extends AppCompatActivity {
 
@@ -113,6 +114,8 @@ public class DocumenListActivity extends AppCompatActivity {
   }
 
   private void parseResult(String result) {
+    SQLiteHelper db = new SQLiteHelper(this);
+
     try {
       JSONObject response = new JSONObject(result);
       JSONArray posts = response.optJSONArray("documents");
@@ -120,14 +123,15 @@ public class DocumenListActivity extends AppCompatActivity {
 
       for (int i = 0; i < posts.length(); i++) {
         JSONObject post = posts.optJSONObject(i);
-        Document item = new Document();
-        item.setId( post.optString("id") );
-        item.setTitle(post.optString("title"));
-        item.setDescription(post.optString("description"));
-        item.setAuthor(post.optString("author"));
-        item.setImage(post.optString("image"));
+        Document document = new Document();
+        document.setId( post.optString("id") );
+        document.setTitle(post.optString("title"));
+        document.setDescription(post.optString("description"));
+        document.setAuthor(post.optString("author"));
+        document.setImage(post.optString("image"));
 
-        feedsList.add(item);
+        db.addDocument( document );
+        feedsList.add(document);
       }
     } catch (JSONException e) {
       e.printStackTrace();

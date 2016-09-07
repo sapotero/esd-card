@@ -76,4 +76,29 @@ public class Document {
     this.url = url;
   }
 
+  public Document(){}
+
+  public Document( String id, String author, String title, String description, String image, String createdAt, String updatedAt, String url ) {
+    super();
+    this.id = id;
+    this.author = author;
+    this.title = title;
+    this.description = description;
+    this.image = image;
+    this.createdAt = createdAt;
+    this.updatedAt = updatedAt;
+    this.url = url;
+  }
+
+  @Override
+  public String toString() {
+    return "Document [id=" + id + ","+
+        "author=" + author + ","+
+        "title=" + title + ","+
+        "description=" + description + ","+
+        "image=" + image + ","+
+        "createdAt=" + createdAt + ","+
+        "updatedAt=" + updatedAt + ","+
+        "url=" + url + "]";
+  }
 }
