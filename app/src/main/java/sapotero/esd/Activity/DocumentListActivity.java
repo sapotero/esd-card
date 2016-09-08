@@ -1,6 +1,5 @@
 package sapotero.esd.Activity;
 
-import android.content.res.AssetManager;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
@@ -31,7 +30,7 @@ import sapotero.esd.Model.Document;
 import sapotero.esd.R;
 import sapotero.esd.SQLite.SQLiteHelper;
 
-public class DocumenListActivity extends AppCompatActivity {
+public class DocumentListActivity extends AppCompatActivity {
 
   private static final String TAG = "DocumentView";
 
@@ -127,10 +126,10 @@ public class DocumenListActivity extends AppCompatActivity {
       progressBar.setVisibility(View.GONE);
 
       if (result == 1) {
-        adapter = new DocumentAdapter(DocumenListActivity.this, feedsList);
+        adapter = new DocumentAdapter(DocumentListActivity.this, feedsList);
         mRecyclerView.setAdapter(adapter);
       } else {
-        Toast.makeText(DocumenListActivity.this, "Failed to fetch data!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(DocumentListActivity.this, "Failed to fetch data!", Toast.LENGTH_SHORT).show();
       }
     }
   }

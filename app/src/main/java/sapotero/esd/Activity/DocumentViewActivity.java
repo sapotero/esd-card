@@ -1,17 +1,14 @@
 package sapotero.esd.Activity;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.squareup.picasso.NetworkPolicy;
 import com.squareup.picasso.Picasso;
 
 import sapotero.esd.R;
@@ -27,11 +24,11 @@ public class DocumentViewActivity extends AppCompatActivity {
     setContentView(R.layout.activity_document_view);
 
 
-    String id = intent.getStringExtra(DocumenListActivity.ID);
-    String title = intent.getStringExtra(DocumenListActivity.TITLE);
-    String description = intent.getStringExtra(DocumenListActivity.DESCRIPTION);
-    String author = intent.getStringExtra(DocumenListActivity.AUTHOR);
-    String image = intent.getStringExtra(DocumenListActivity.IMAGE);
+    String id = intent.getStringExtra(DocumentListActivity.ID);
+    String title = intent.getStringExtra(DocumentListActivity.TITLE);
+    String description = intent.getStringExtra(DocumentListActivity.DESCRIPTION);
+    String author = intent.getStringExtra(DocumentListActivity.AUTHOR);
+    String image = intent.getStringExtra(DocumentListActivity.IMAGE);
 
     TextView mId = (TextView) findViewById(R.id.id);
     mId.setText( id );
@@ -75,7 +72,5 @@ public class DocumentViewActivity extends AppCompatActivity {
   }
 
   public void showPdf(View view) {
-    Intent intent = new Intent(this, PdfViewActivity.class);
-    this.startActivity(intent);
   }
 }

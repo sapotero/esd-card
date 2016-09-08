@@ -5,19 +5,19 @@ import android.content.Intent;
 import android.os.IBinder;
 
 
-public class SedAuthenticatorService extends Service {
+public class EsdAuthenticatorService extends Service {
 
-private SedAuthenticator mAuthenticator;
+  private EsdAuthenticator mAuthenticator;
 
   @Override
   public void onCreate() {
     super.onCreate();
-    mAuthenticator = new SedAuthenticator(getApplicationContext());
-    }
+    mAuthenticator = new EsdAuthenticator(getApplicationContext());
+  }
 
   @Override
   public IBinder onBind(Intent intent) {
     return mAuthenticator.getIBinder();
-    }
+  }
 
 }

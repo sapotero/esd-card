@@ -9,11 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.squareup.picasso.NetworkPolicy;
 import com.squareup.picasso.Picasso;
 import java.util.List;
 
-import sapotero.esd.Activity.DocumenListActivity;
+import sapotero.esd.Activity.DocumentListActivity;
 import sapotero.esd.Activity.DocumentViewActivity;
 import sapotero.esd.Model.Document;
 import sapotero.esd.R;
@@ -66,11 +65,11 @@ public class DocumentAdapter extends RecyclerView.Adapter<DocumentViewHolder> {
       Toast.makeText(mContext, document.getTitle(), Toast.LENGTH_SHORT).show();
 
       Intent intent = new Intent(mContext, DocumentViewActivity.class);
-      intent.putExtra(DocumenListActivity.ID, document.getId());
-      intent.putExtra(DocumenListActivity.TITLE, document.getTitle());
-      intent.putExtra(DocumenListActivity.DESCRIPTION, document.getDescription());
-      intent.putExtra(DocumenListActivity.AUTHOR, document.getAuthor());
-      intent.putExtra(DocumenListActivity.IMAGE, document.getImage());
+      intent.putExtra(DocumentListActivity.ID, document.getId());
+      intent.putExtra(DocumentListActivity.TITLE, document.getTitle());
+      intent.putExtra(DocumentListActivity.DESCRIPTION, document.getDescription());
+      intent.putExtra(DocumentListActivity.AUTHOR, document.getAuthor());
+      intent.putExtra(DocumentListActivity.IMAGE, document.getImage());
       mContext.startActivity(intent);
     }
   };

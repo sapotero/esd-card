@@ -8,4 +8,16 @@
     <string name="app_name_with_index">PDF (%1$d/%2$d)</string>
     <string name="info">Информация</string>
     <string name="intro_message">intro_message</string>
+    <string name="account_already_exists">Акк уже создан</string>
+
+
+    <string name="account_name">sapotero.sed</string>
+    <string name="login">Войти</string>
+
+    <string name="password">Пароль</string>
+    <string name="username">Логин</string>
+
+    <string name="get_token_url">http://mobile.esd.n-core.ru/token/%1$s.json?password=%2$s</string>
+
+
 </resources>
