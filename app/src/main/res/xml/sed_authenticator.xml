@@ -4,4 +4,5 @@
     android:accountType="sapotero.esd"
     android:icon="@mipmap/ic_launcher"
     android:label="@string/app_name"
-    android:smallIcon="@mipmap/ic_launcher" />
+    android:smallIcon="@mipmap/ic_launcher"
+    android:accountPreferences="@xml/authenticator_preferences"/>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    <PreferenceCategory android:title="FussyLogic Authenticator" />
+    <PreferenceCategory android:title="Настроки приложения" />
     <CheckBoxPreference
         android:key="isDebug"
-        android:summary="Connecting to a debug server instead of production server"
-        android:title="Use debug server" />
+        android:summary="Позволяет собирать дополнительные данные для отладки"
+        android:title="Режим отладки" />
     <SwitchPreference
         android:key="logsVerbose"
-        android:summary="Increase logging verbosity for LogCat output"
-        android:title="Debug Logs" />
+        android:summary="Логиновать действия пользователя"
+        android:title="Логирование" />
 </PreferenceScreen>

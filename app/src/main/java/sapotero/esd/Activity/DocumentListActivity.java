@@ -1,7 +1,10 @@
 package sapotero.esd.Activity;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -64,24 +67,6 @@ public class DocumentListActivity extends AppCompatActivity {
     new AsyncHttpTask().execute(url);
 
     setTitle( "Документы" );
-
-    String tContents = "";
-    try {
-      InputStream stream = getAssets().open("test.pdf");
-
-      int size = stream.available();
-      byte[] buffer = new byte[size];
-      stream.read(buffer);
-      stream.close();
-      tContents = new String(buffer);
-    } catch (IOException e) {
-//      Log.d(e);
-    }
-
-//    getAssets().openFd("test.pdf").getParcelFileDescriptor();
-
-    Log.d( "FILE", tContents.substring(0, 100) );
-
 
   }
 
